@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanika Negi Portfolio</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+/* ===== BODY ===== */
+
+body{
+color:white;
+
+background:linear-gradient(
+-45deg,
+#0f172a,
+#1e293b,
+#f63b5d,
+#615cf6
+);
+
+background-size:400% 400%;
+animation:bg 12s infinite ease;
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(12px);
+
+background:rgba(0,0,0,.2);
+
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:100px 10%;
+}
+
+.hero-text{
+max-width:550px;
+}
+
+.hero-text h1{
+font-size:60px;
+}
+
+.typing{
+
+overflow:hidden;
+white-space:nowrap;
+border-right:3px solid gold;
+
+animation:
+typing 4s steps(40,end),
+blink .8s infinite;
+}
+
+@keyframes typing{
+from{width:0;}
+to{width:100%;}
+}
+
+@keyframes blink{
+50%{border-color:transparent;}
+}
+
+.hero-image img{
+
+width:350px;
+border-radius:50%;
+
+animation:float 3s infinite ease-in-out;
+
+box-shadow:
+0 0 20px #3b82f6,
+0 0 50px #8b5cf6;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+background:gold;
+color:black;
+
+border-radius:30px;
+
+margin-top:20px;
+
+font-weight:bold;
+
+text-decoration:none;
+}
+
+.btn:hover{
+
+box-shadow:
+0 0 15px gold,
+0 0 35px gold;
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+padding:100px 10%;
+}
+
+h2{
+margin-bottom:25px;
+font-size:40px;
+}
+
+/* ===== GLASS CARD ===== */
+
+.card{
+
+background:rgba(255,255,255,.1);
+
+backdrop-filter:blur(10px);
+
+padding:25px;
+
+border-radius:20px;
+
+margin-top:20px;
+
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* ===== SKILLS ===== */
+
+.skill{
+margin-bottom:25px;
+}
+
+.bar{
+
+height:15px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+border-radius:20px;
+}
+
+.html{width:90%;background:#ff5733;}
+.css{width:85%;background:#3b82f6;}
+.js{width:75%;background:#ffd700;}
+.bootstrap{width:80%;background:#5cf678;}
+
+/* ===== PROJECTS ===== */
+
+<!-- PROJECTS 
+
+<section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="project-container">
+
+        <!-- Calculator App -->
+
+        <div class="project-card">
+
+            <a href="https://negikanika1506-ai.github.io/calculator-app/" target="_blank">
+
+               <img src="images/calculator.png" alt="Calculator App">
+
+            </a>
+
+            <h3>Calculator App</h3>
+
+            <p>
+                Responsive calculator built using HTML, CSS and JavaScript.
+                Click the project image to open the live website.
+            </p>
+
+        </div>
+
+        <!-- YouTube Clone -->
+
+        <div class="project-card">
+
+            <a href="https://negikanika1506-ai.github.io/Youtube-clone/" target="_blank">
+
+                <img src="images/youtube-clone.png" alt="YouTube Clone">
+
+            </a>
+
+            <h3>YouTube Clone</h3>
+
+            <p>
+                A responsive YouTube homepage clone created using HTML, CSS and JavaScript.
+                Click the project image to open the live website.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+/* ===== CONTACT ===== */
+
+form{
+
+display:flex;
+flex-direction:column
+
+max-width:500px;
+
+gap:15px;
+}
+
+input,
+textarea{
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+}
+
+button{
+
+padding:15px;
+
+background:gold;
+
+border:none;
+
+border-radius:12px;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+/* ===== SOCIAL ===== */
+
+.social{
+
+margin-top:25px;
+}
+
+.social a{
+
+display:inline-flex;
+
+justify-content:center;
+align-items:center;
+
+width:50px;
+height:50px;
+
+background:white;
+
+color:black;
+
+border-radius:50%;
+
+margin-right:10px;
+
+text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero-image img{
+width:250px;
+margin-top:30px;
+}
+
+nav{
+flex-direction:column;
+}
+
+nav ul{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">Kanika.</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+<div class="hero-text">
+
+<h1>Hi, I'm Kanika Negi </h1>
+
+<h2 class="typing">
+Frontend Developer | 
+</h2>
+
+<p>
+I am Kanika Negi, a passionate web developer interested in creating responsive and user-friendly websites.
+ I enjoy learning new technologies and building projects that solve real-world problems.
+</p>
+
+<a href="#projects" class="btn">
+View Projects
+</a>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+    <img src="images/avatar.png" alt="Kanika Avatar">
+</div>
+
+
+
+
+
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+
+I am a passionate Frontend Developer who
+enjoys building attractive and responsive
+web applications using HTML, CSS and JavaScript.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar"><div class="fill html"></div></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar"><div class="fill css"></div></div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar"><div class="fill js"></div></div>
+</div>
+
+<div class="skill">
+<p>Bootstrap</p>
+<div class="bar"><div class="fill bootstrap"></div></div>
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<img src="images/calculator-desktop.png">
+
+
+
+</div>
+
+<div class="project">
+
+<img src="images/youtube-clone.png" alt="YouTube Clone">
+
+<h3>YouTube Clone</h3>
+
+<p>Responsive YouTube homepage clone.</p>
+
+</div>
+
+<div class="project">
+
+<img src="images/calculator.png" alt="Calculator">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+
+    <div class="contact-card">
+        <h3>Kanika Negi</h3>
+
+        <p>
+            📧 Email:
+            <a href="mailto:negikanika1506@gmail.com">
+                negikanika1506@gmail.com
+            </a>
+        </p>
+
+        <p>
+            📱 Phone:
+            <a href="tel:+917982954740">
+                +91 7982954740
+            </a>
+        </p>
+
+        <p>
+            💼 LinkedIn:
+            <a href="https://www.linkedin.com/in/kanika-negi-a2b2853b0"
+               target="_blank">
+                View LinkedIn Profile
+            </a>
+        </p>
+
+        <p>
+            💻 GitHub:
+            <a href="https://github.com/negikanika1506-ai"
+               target="_blank">
+                View GitHub Profile
+            </a>
+        </p>
+    </div>
+</section>
+
+</script>
+
+</body>
+</html>
